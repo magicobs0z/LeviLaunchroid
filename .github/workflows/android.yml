@@ -137,7 +137,7 @@ jobs:
 
       - name: Build Debug APK Without Firebase Secrets
         if: env.HAS_GOOGLE_SERVICES == 'false'
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug -x processDebugGoogleServices
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4.6.2
